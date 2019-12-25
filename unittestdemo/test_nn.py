@@ -17,7 +17,7 @@ class MyTest(unittest.TestCase):
         cls.driver.quit()
     def test_t1(self):
         #self.openfirfox()
-        self.driver.get("http://127.0.0.1:8001")
+        self.driver.get("http://192.168.27.204:8001")
         self.driver.find_element_by_name("uname").send_keys("zhangyang")
         self.driver.find_element_by_name("pass").send_keys("111")
         self.driver.find_element_by_xpath("//input[@type='submit']").click()
@@ -68,7 +68,7 @@ class MyTest(unittest.TestCase):
         cookie_jar=http.cookiejar.MozillaCookieJar("a.txt")
         cookie_processor = HTTPCookieProcessor(cookie_jar)
         opener = build_opener(cookie_processor)
-        url = "http://127.0.0.1:8001/login"
+        url = "http://192.168.27.204:8001/login"
         data = {'uname': 'zhangyang', 'pass': '111'}
         from urllib.parse import urlencode
         data=urlencode(data).encode()
@@ -82,7 +82,7 @@ class MyTest(unittest.TestCase):
         print(response.read().decode("utf-8"))
         #response.close()
         #第二次访问list
-        req2 = Request(url="http://127.0.0.1:8001/list", method="GET")
+        req2 = Request(url="http://192.168.27.204:8001/list", method="GET")
         response2 = opener.open(req2)
         print(response2.headers)
         print(response2.read().decode("utf-8"))

@@ -20,7 +20,7 @@ class myddttest(unittest.TestCase):
 
     @ddt.data(*testdatas)
     def test_01(self,data):
-        self.driver.get("http://127.0.0.1:8001/")
+        self.driver.get("http://192.168.27.204:8001/")
         self.driver.find_element_by_name("uname").send_keys(data['user'])
         self.driver.find_element_by_name("pass").send_keys(data['pass'])
         self.driver.find_element_by_xpath("//input[@type='submit']").click()
