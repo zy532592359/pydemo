@@ -55,7 +55,7 @@ class MyTest(unittest.TestCase):
         url = "http://192.168.27.204:8001/list"
         #data={'uname':'zhangyang','pass':'111'}
         data = {'uname': 'zhangyang', 'pass': '111'}
-        response = requests.post(url="http://127.0.0.1:8001/login", data=data, timeout=5)
+        response = requests.post(url="http://192.168.27.204:8001/login", data=data, timeout=5)
         cookie=response.cookies
         #print(dir(cookie))
         s = requests.session()
